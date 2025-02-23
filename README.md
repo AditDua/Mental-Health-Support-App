@@ -1,5 +1,5 @@
 
-# Mental Health Journal Application
+# Mental Health Support Application
 
 This is a web application designed to help users track their mental health through journal entries and mood ratings. It offers resources for mental health support and provides a user-friendly interface for managing personal reflections and emotional states.
 
@@ -38,13 +38,14 @@ To set up the project locally, follow these steps:
 1. Clone the repository:
 
    git clone (https://github.com/AditDua/Mental-Health-Support-App/)
+   
    cd mental-health-journal
 
-2. Create a virtual environment:
+3. Create a virtual environment:
 
    python -m venv venv
 
-3. Activate the virtual environment:
+4. Activate the virtual environment:
 
    - For Windows:
      venv\Scripts\activate
@@ -52,15 +53,15 @@ To set up the project locally, follow these steps:
    - For macOS/Linux:
      source venv/bin/activate
 
-4. Install the required packages:
+5. Install the required packages:
 
    pip install -r requirements.txt
 
-5. Set up the database:
+6. Set up the database:
 
    python app.py
 
-6. Run the application:
+7. Run the application:
 
    python app.py
 
