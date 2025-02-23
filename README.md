@@ -37,7 +37,7 @@ To set up the project locally, follow these steps:
 
 1. Clone the repository:
 
-   git clone https://github.com/AditDua/Mental-Health-App.git
+   git clone (https://github.com/AditDua/Mental-Health-Support-App/)
    cd mental-health-journal
 
 2. Create a virtual environment:
