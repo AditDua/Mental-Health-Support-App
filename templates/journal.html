@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Journal Entry</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Add a New Journal Entry</h1>
+        <form action="/journal" method="POST">
+            <div class="form-group">
+                <label for="mood">Mood Rating (1-5):</label>
+                <input type="number" id="mood" name="mood" class="form-control" min="1" max="5" required>
+            </div>
+            <div class="form-group">
+                <label for="entry">Your Entry:</label>
+                <textarea id="entry" name="entry" class="form-control" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

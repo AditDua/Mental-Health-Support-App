@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Resources</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f0f8ff;
+        }
+        .container {
+            margin-top: 50px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .resource {
+            margin-bottom: 20px;
+        }
+        .resource h3 {
+            color: #007bff;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-top: 1px solid #eaeaea;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .btn {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mental Health Resources</h1>
+        <div class="resource">
+            <h3><a href="https://www.mentalhealth.gov/" target="_blank">MentalHealth.gov</a></h3>
+            <p>This site offers a wealth of information on mental health issues, including educational resources, treatment options, and strategies for maintaining mental wellness.</p>
+        </div>
+        <div class="resource">
+            <h3><a href="https://www.nami.org/Home" target="_blank">NAMI (National Alliance on Mental Illness)</a></h3>
+            <p>NAMI provides education, advocacy, and support for individuals affected by mental illness. Their website includes resources for finding help, understanding mental health conditions, and connecting with local support groups.</p>
+        </div>
+        <div class="resource">
+            <h3><a href="https://www.psychologytoday.com/us" target="_blank">Psychology Today</a></h3>
+            <p>Psychology Today features a comprehensive directory of therapists, articles on various mental health topics, and a wealth of information about psychological theories and practices.</p>
+        </div>
+        <div class="resource">
+            <h3><a href="https://www.betterhelp.com/" target="_blank">BetterHelp</a></h3>
+            <p>BetterHelp connects individuals with licensed therapists via online messaging, video calls, and live chats. It's an accessible option for those seeking mental health support from the comfort of their homes.</p>
+        </div>
+        <a href="/" class="btn btn-primary">Back to Home</a>
+    </div>
+    <footer>
+        <p>&copy; 2024 Mental Health Support App. All rights reserved.</p>
+    </footer>
+</body>
+</html>

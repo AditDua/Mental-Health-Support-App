@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Support App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="animated-title">Mental Health Support App</h1>
+        <div class="button-group">
+            <a href="/journal" class="btn mood-btn">Add Journal Entry</a>
+            <a href="/resources" class="btn resources-btn">Mental Health Resources</a>
+            <a href="/logout" class="btn btn-danger">Logout</a>
+        </div>
+
+        <h2>Your Journal Entries with Moods</h2>
+        <ul class="list-group">
+            {% for entry in entries %}
+                <li class="list-group-item">
+                    <strong>Mood: </strong> {{ entry.mood }} {{ emojis[loop.index0] }} <br>
+                    <strong>Entry: </strong> {{ entry.entry }} <br>
+                    <small>Added on: {{ entry.date.strftime("%B %d, %Y") }}</small>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <!-- Mood Chart -->
+        <h2>Your Mood Over Time</h2>
+        <canvas id="moodChart" width="400" height="200"></canvas>
+
+    </div>
+    <footer>
+        <p>&copy; 2024 Mental Health Support App. All rights reserved.</p>
+    </footer>
+
+    <!-- Script for rendering the Mood Chart -->
+    <script>
+        const ctx = document.getElementById('moodChart').getContext('2d');
+        const moodChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: {{ dates|tojson }},  // List of dates for the x-axis
+                datasets: [{
+                    label: 'Mood Rating',
+                    data: {{ moods|tojson }},  // List of mood values for the y-axis
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.4,
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
